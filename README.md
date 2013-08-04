@@ -1,4 +1,6 @@
 # Wordpress Development Environment
+This is a shell for creating a development environment for Wordpress.
+
 
 ## Requirements
 
