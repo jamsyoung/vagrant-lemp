@@ -9,20 +9,34 @@ This is a shell for creating a development environment for Wordpress.
 - [Wordpress][2]
 
 
-# Setup
+## Setup
 
-- Install [VirtualBox][0]
-- Install [Vagrant][1]
-- Install [Wordpress][2]. This should put it in `wordpress-dev/wordpress`
 
-        $ cd wordpress-dev
-        $ curl -O http://wordpress.org/latest.tar.gz
-        $ tar xvzf latest.tar.gz
+### Install [VirtualBox][0]
+Typical `.dmg` installer.  Just follow the directions.  You can get the
+installer from <https://www.virtualbox.org/wiki/Downloads>.
 
-- Create the virtual machine.
 
-        $ cd wordpress-dev/vagrant/env
-        $ vagrant up
+### Install [Vagrant][1]
+Typical `.dmg` installer.  Just follow the directions.  You can get the
+installer from <http://downloads.vagrantup.com>
+
+
+### Install [Wordpress][2].
+This should put it in `wordpress-dev/wordpress`.  Doing this following should
+get everything in the right place.
+
+    $ cd wordpress-dev
+    $ curl -O http://wordpress.org/latest.tar.gz
+    $ tar xvzf latest.tar.gz
+
+
+### Create the virtual machine.
+The virtual machine, which VirtualBox will host, must always be started from
+the `wordpress-dev/vagrant/env` directory.
+
+    $ cd wordpress-dev/vagrant/env
+    $ vagrant up
 
 
 
