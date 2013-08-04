@@ -78,7 +78,7 @@ TBD
 ### MySQL
 Admin username and password is `root`
 
-    # mysql --version
+    $ mysql --version
     mysql  Ver 14.14 Distrib 5.5.32, for debian-linux-gnu (i686) using readline 6.2
 
 
