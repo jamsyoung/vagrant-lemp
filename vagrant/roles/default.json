@@ -8,6 +8,7 @@
     "run_list": [
         "recipe[build-essential]",
         "recipe[apt]",
-        "recipe[nginx]"
+        "recipe[nginx]",
+        "recipe[mysql::server]"
     ]
 }

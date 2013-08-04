@@ -4,7 +4,7 @@ This is a shell for creating a development environment for Wordpress.
 
 ## TODO
 - Configure Nginx in the VM to use PHP
-- Add MySQL to the VM
+- Document how to get Wordpress running
 
 
 ## Requirements
@@ -58,10 +58,30 @@ the `wordpress-dev/vagrant/env` directory.
 
 ## The Virtual Machine
 
-- Ubuntu 
-- Nginx
-- PHP
-- MySQL
+
+### Ubuntu
+
+    $ uname -a
+    Linux precise32 3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012 i686 i686 i386 GNU/Linux
+
+
+### Nginx
+
+    $ nginx -v
+    nginx version: nginx/1.1.19
+
+
+### PHP
+TBD
+
+
+### MySQL
+Admin username and password is `root`
+
+    # mysql --version
+    mysql  Ver 14.14 Distrib 5.5.32, for debian-linux-gnu (i686) using readline 6.2
+
+
 
 
 [0]: https://www.virtualbox.org/wiki/Downloads
