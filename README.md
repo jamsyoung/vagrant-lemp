@@ -34,7 +34,7 @@ get everything in the right place.
     $ tar xvzf latest.tar.gz
 
 
-### Create the virtual machine.
+### Create and setup the virtual machine.
 The virtual machine, which VirtualBox will host, must always be started from
 the `wordpress-dev/vagrant/env` directory.
 
