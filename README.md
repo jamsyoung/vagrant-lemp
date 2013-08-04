@@ -1,8 +1,10 @@
 # Wordpress Development Environment
 This is a shell for creating a development environment for Wordpress.
 
-NOTE: This is not complete yet.  The vm does not have nginx, php, and mysql
-configured at this point.
+
+## TODO
+- Configure Nginx in the VM to use PHP
+- Add MySQL to the VM
 
 
 ## Requirements
@@ -51,9 +53,15 @@ the `wordpress-dev/vagrant/env` directory.
 - Start up your vm with `vagrant up` in the `wordpress-dev/vagrant/env`
   directory.
 
-- View your Wordpress environment in your browser at <http://localhost:8080>
+- View your wordpress environment in your browser at <http://localhost:8080>
 
 
+## The Virtual Machine
+
+- Ubuntu 
+- Nginx
+- PHP
+- MySQL
 
 
 [0]: https://www.virtualbox.org/wiki/Downloads
