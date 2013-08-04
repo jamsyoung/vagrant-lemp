@@ -1,6 +1,9 @@
 # Wordpress Development Environment
 This is a shell for creating a development environment for Wordpress.
 
+NOTE: This is not complete yet.  The vm does not have nginx, php, and mysql
+configured at this point.
+
 
 ## Requirements
 
@@ -37,6 +40,18 @@ the `wordpress-dev/vagrant/env` directory.
 
     $ cd wordpress-dev/vagrant/env
     $ vagrant up
+    $ vagrant ssh
+    $ sudo dev/scripts/vmsetup.sh
+
+
+## Development process
+
+- Make your changes in `wordpress-dev/wordpress` for whatever you are doing.
+
+- Start up your vm with `vagrant up` in the `wordpress-dev/vagrant/env`
+  directory.
+
+- View your Wordpress environment in your browser at <http://localhost:8080>
 
 
 
