@@ -1,9 +1,8 @@
 # Wordpress Development Environment
-This is a shell for creating a development environment for Wordpress.
-
-
-## TODO
-- Document how to get Wordpress running
+This is a shell for creating a development environment for Wordpress.  This
+will give you an Ubuntu VM, nginx, PHP, and MySQL that you can use to install
+Wordpress into for development.  This will get you most of the way there, but
+does not automate installing Wordpress.
 
 
 ## Requirements
@@ -41,6 +40,16 @@ the `wordpress-dev/vagrant/env` directory.
     $ vagrant up
     $ vagrant ssh
     $ sudo dev/scripts/vmsetup.sh
+
+
+### Setup Wordpress
+Navigate to <http://localhost:8080> and follow the instructions.
+
+At this point, you have a full environment that can support Wordpress.  This
+does not go into detail on the specifics of getting Wordpress running.  You
+will need to do things manually, like create the wordpress database, etc.
+There are plenty of resources on the internet that detail how to install
+Wordpress.
 
 
 ## Development process
