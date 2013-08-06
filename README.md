@@ -3,7 +3,7 @@ This is a shell for creating a development environment for Wordpress.
 
 
 ## TODO
-- Configure Nginx in the VM to use PHP
+- Configure PHP to work with MySQL
 - Document how to get Wordpress running
 
 
@@ -72,14 +72,28 @@ the `wordpress-dev/vagrant/env` directory.
 
 
 ### PHP
-TBD
+
+    $ php --version
+    PHP 5.3.10-1ubuntu3.7 with Suhosin-Patch (cli) (built: Jul 15 2013 18:10:56) 
+    Copyright (c) 1997-2012 The PHP Group
+    Zend Engine v2.3.0, Copyright (c) 1998-2012 Zend Technologies
+        with Xdebug v2.1.0, Copyright (c) 2002-2010, by Derick Rethans
 
 
 ### MySQL
-Admin username and password is `root`
 
     $ mysql --version
     mysql  Ver 14.14 Distrib 5.5.32, for debian-linux-gnu (i686) using readline 6.2
+
+
+## Useful Info
+
+- How to restart nginx: `$ sudo /etc/init.d/nginx restart`
+- How to restart PHP5-FPM: `$ sudo /etc/init.d/php5-fpm restart`
+- php.ini location: `/etc/php5/fpm/php.ini`
+- How to enable errors to show: In `/etc/php5/fpm/php.ini` set `display_errors = On`
+- How to enable xdebug html error format: In `/etc/php5/fpm/php.ini` set `html_errors = On`
+- MySQL admin username and password is `root`
 
 
 

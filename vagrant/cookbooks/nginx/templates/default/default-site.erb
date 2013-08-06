@@ -1,11 +1,37 @@
 server {
-    listen 80;
-    server_name <%= node['hostname'] %>;
+    listen 80 default;
+    server_name <%= node['hostname'] %>';
 
-    access_log <%= node['nginx']['log_dir'] %>/localhost.access.log;
+#    root /usr/share/nginx/www;
+    root /home/vagrant/dev/wordpress;
 
-    location / {
-        root /home/vagrant/dev/wordpress;
-        index index.html index.htm;
+    access_log  <%= node['nginx']['log_dir'] %>/access.log;
+    error_log  <%= node['nginx']['log_dir'] %>/error.log;
+
+    autoindex on;
+
+    index index.php index.html index.htm;
+
+    try_files $uri $uri/ @rewrite;
+
+#    location @rewrite {
+#        rewrite ^/(.*)$ /index.php/$1;
+#    }
+
+    location ~ \.php {
+        # try_files $uri =404;
+
+        fastcgi_index index.php;
+        fastcgi_pass 127.0.0.1:9000;
+
+        include fastcgi_params;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_param PATH_INFO $fastcgi_path_info;
+        fastcgi_param PATH_TRANSLATED $document_root$fastcgi_path_info;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    }
+
+    location ~ /\.ht {
+        deny all;
     }
 }
