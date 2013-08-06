@@ -11,4 +11,4 @@ apt-get install curl -y
 apt-get install vim -y
 
 ## install php
-apt-get install php5-cli php5-fpm php5-common php5-curl php5-xdebug php5-gd php-apc php-pear -y
+apt-get install php5-cli php5-fpm php5-common php5-curl php5-xdebug php5-gd php-apc php-pear php5-mysql -y

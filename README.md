@@ -3,7 +3,6 @@ This is a shell for creating a development environment for Wordpress.
 
 
 ## TODO
-- Configure PHP to work with MySQL
 - Document how to get Wordpress running
 
 
@@ -15,8 +14,6 @@ This is a shell for creating a development environment for Wordpress.
 
 
 ## Setup
-
-
 ### Install [VirtualBox][0]
 Typical `.dmg` installer.  Just follow the directions.  You can get the
 installer from <https://www.virtualbox.org/wiki/Downloads>.
@@ -27,7 +24,7 @@ Typical `.dmg` installer.  Just follow the directions.  You can get the
 installer from <http://downloads.vagrantup.com>
 
 
-### Install [Wordpress][2].
+### Install [Wordpress][2]
 This should put it in `wordpress-dev/wordpress`.  Doing this following should
 get everything in the right place.
 
@@ -57,8 +54,6 @@ the `wordpress-dev/vagrant/env` directory.
 
 
 ## The Virtual Machine
-
-
 ### Ubuntu
 
     $ uname -a
