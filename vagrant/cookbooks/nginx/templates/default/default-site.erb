@@ -3,7 +3,7 @@ server {
     server_name <%= node['hostname'] %>';
 
 #    root /usr/share/nginx/www;
-    root /home/vagrant/dev/wordpress;
+    root /home/vagrant/dev;
 
     access_log  <%= node['nginx']['log_dir'] %>/access.log;
     error_log  <%= node['nginx']['log_dir'] %>/error.log;

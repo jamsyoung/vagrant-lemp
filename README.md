@@ -1,15 +1,14 @@
-# Wordpress Development Environment
-This is a shell for creating a development environment for Wordpress.  This
-will give you an Ubuntu VM, nginx, PHP, and MySQL that you can use to install
-Wordpress into for development.  This will get you most of the way there, but
-does not automate installing Wordpress.
+# Vagrant Based LEMP
+This is a LEMP vagrant environment for development.  LEMP is short for Linux +
+Nginx + MySQL + PHP.  In the past this was tailored to Wordpress development, I
+have made it more generic so it can be used for anything that needs PHP and
+MySQL.  In the future I am probably going to throw MongoDB in here as well.
 
 
 ## Requirements
 
 - [VirtualBox][0]
 - [Vagrant][1]
-- [Wordpress][2]
 
 
 ## Setup
@@ -23,43 +22,35 @@ Typical `.dmg` installer.  Just follow the directions.  You can get the
 installer from <http://downloads.vagrantup.com>
 
 
-### Install [Wordpress][2]
-This should put it in `wordpress-dev/wordpress`.  Doing this following should
-get everything in the right place.
-
-    $ cd wordpress-dev
-    $ curl -O http://wordpress.org/latest.tar.gz
-    $ tar xvzf latest.tar.gz
-
-
 ### Create and setup the virtual machine.
 The virtual machine, which VirtualBox will host, must always be started from
-the `wordpress-dev/vagrant/env` directory.
+the `vagrant-lemp/vagrant/env` directory.  There is a shell script you need to
+run just once.  My Chef-fu is not good enough to get all of this automated with
+Chef Solo.
 
-    $ cd wordpress-dev/vagrant/env
+    $ cd vagrant-lemp/vagrant/env
     $ vagrant up
     $ vagrant ssh
-    $ sudo dev/scripts/vmsetup.sh
+    $ sudo dev/setup/scripts/vmsetup.sh
 
 
-### Setup Wordpress
-Navigate to <http://localhost:8080> and follow the instructions.
+### Restart the vm
 
-At this point, you have a full environment that can support Wordpress.  This
-does not go into detail on the specifics of getting Wordpress running.  You
-will need to do things manually, like create the wordpress database, etc.
-There are plenty of resources on the internet that detail how to install
-Wordpress.
+    $ exit
+    $ vagrant reload
+
+You can go to <http://localhost:8080/phpinfo.php> to verify it is working.
 
 
 ## Development process
 
-- Make your changes in `wordpress-dev/wordpress` for whatever you are doing.
+- Make your changes in `vagrant-lemp/dev` for whatever you are doing.  This is
+  shared in the vm in `~/dev` as well.
 
-- Start up your vm with `vagrant up` in the `wordpress-dev/vagrant/env`
+- Start up your vm with `vagrant up` in the `vagrant-lemp/vagrant/env`
   directory.
 
-- View your wordpress environment in your browser at <http://localhost:8080>
+- View your environment in your browser at <http://localhost:8080>
 
 
 ## The Virtual Machine
@@ -104,4 +95,3 @@ Wordpress.
 
 [0]: https://www.virtualbox.org/wiki/Downloads
 [1]: http://downloads.vagrantup.com
-[2]: http://wordpress.org/download

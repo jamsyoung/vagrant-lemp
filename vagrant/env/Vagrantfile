@@ -1,27 +1,27 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "base"
-  config.vm.box_url = "http://files.vagrantup.com/precise32.box"
+    config.vm.box = "base"
+    config.vm.box_url = "http://files.vagrantup.com/precise32.box"
 
-  config.vm.network :forwarded_port, guest: 80, host: 8080
-  config.vm.network :private_network, ip: "192.168.33.10"
+    config.vm.network :forwarded_port, guest: 80, host: 8080
+    config.vm.network :private_network, ip: "192.168.33.10"
 
-  config.ssh.forward_agent = true
+    config.ssh.forward_agent = true
 
-  config.vm.synced_folder "../../wordpress", "/home/vagrant/dev/wordpress"
-  config.vm.synced_folder "../../scripts", "/home/vagrant/dev/scripts"
+    config.vm.synced_folder "../../dev", "/home/vagrant/dev"
+    config.vm.synced_folder "../../scripts", "/home/vagrant/setup/scripts"
 
-  config.vm.provision :chef_solo do |chef|
-    chef.cookbooks_path = "../cookbooks"
-    chef.roles_path = "../roles"
-    chef.add_role("default")
-    chef.json = {
-        :mysql => {
-            :server_root_password => "root",
-            :server_repl_password => "root",
-            :server_debian_password => "root"
+    config.vm.provision :chef_solo do |chef|
+        chef.cookbooks_path = "../cookbooks"
+        chef.roles_path = "../roles"
+        chef.add_role("default")
+        chef.json = {
+            :mysql => {
+                :server_root_password => "root",
+                :server_repl_password => "root",
+                :server_debian_password => "root"
+            }
         }
-    }
-  end
+    end
 end
